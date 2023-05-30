@@ -1,0 +1,124 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="box" id="heading">
+    <h1>
+      <%= listTitle %>
+    </h1>
+  </div>
+
+  <div class="box">
+
+    <% newListItems.forEach(function(item){ %>
+      <form action="/delete" method="post">
+        <div class="item">
+          <p>
+            <input type="checkbox" name="checkbox" value="<%= item.id %>" onChange="this.form.submit()">
+  
+           <label id="x"><%= item.name %></label> 
+          </p>
+        </div>
+        <input type="hidden" name="listName" value="<%= listTitle %> "></input>
+      </form>
+      
+      <% }) %>
+
+        <form class="item" action="/" method="post">
+          <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+          <button type="submit" name="list" value=<%= listTitle %>>+</button>
+        </form>
+  </div>
+ 
+
+
+</body>
+
+<footer>
+  <strong> @Copywrite 2023 MD Rehan Ansari </strong>
+</footer>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="box" id="heading">
+    <h1>
+      <%= listTitle %>
+    </h1>
+  </div>
+
+  <div class="box">
+
+
+    <% newListItems.forEach(function (item) { %>
+      <form action="/delete" method="post">
+        <div class="item">
+          <p>
+            <input type="checkbox" name="checkbox" value="<%= item.id %>" onChange="this.form.submit()">
+
+            <label id="x">
+              <%= item.name %>
+            </label>
+          </p>
+        </div>
+        <!-- to delete an item from customListName -->
+        <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+      </form>
+
+      <% }) %>
+
+
+
+
+
+
+
+
+
+
+        <!-- <% for( let i=0; i <newListItems.length; i++ ) { %> 
+      <div class="item">
+        <p>
+          <input type="checkbox" for="x">
+
+          <label id="x"><%= newListItems[i].name %></label>
+        </p>
+      </div>
+      <% } %> -->
+
+        <form class="item" action="/" method="post">
+          <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+          <button type="submit" name="list" value=<%=listTitle %>>+</button>
+        </form>
+  </div>
+
+
+
+</body>
+
+<footer>
+  <strong> @Copywrite 2023 MD Rehan </strong>
+</footer>
+
+</html>
